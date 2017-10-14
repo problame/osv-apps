@@ -19,7 +19,7 @@ cd $SRCDIR
 patch -p1 < ../osv.patch
 
 cd $BUILDDIR
-CFLAGS="-fPIC" CXXFLAGS="-fPIC" cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../mysql-$VERSION
+CFLAGS="-fPIC" CXXFLAGS="-fPIC -fpermissive" cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../mysql-$VERSION
 make -j4
 make install DESTDIR=$ROOTDIR
 
